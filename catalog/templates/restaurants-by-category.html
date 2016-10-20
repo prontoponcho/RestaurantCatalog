@@ -1,0 +1,36 @@
+{% extends "base-restaurant.html" %}
+{% block content %}
+
+	{% if restaurants_by_category == None %}
+
+        <h3>There are currently no restaurants</h3>
+
+    {% else %}
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="list-group">
+			{% for category in category_order %}
+
+				<h2 class="text-center category">{{category}}</h2>
+				<div class="list-group-item">
+
+					{% for restaurant in restaurants_by_category[category] %}
+                        <h3>{{restaurant.name}}</h3>
+                        <a href="{{url_for('viewMenu', restaurant_id=restaurant.id)}}">Menu
+                        </a>
+                        |
+                        <a href="{{url_for('editRestaurant', restaurant_id=restaurant.id)}}">Edit</a>
+                        |
+                        <a href="{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}" >Delete</a>
+					{% endfor %}
+				</div>
+
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{% endif %}
+
+{% endblock %}

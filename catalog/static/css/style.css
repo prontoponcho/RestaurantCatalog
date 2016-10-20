@@ -1,0 +1,22 @@
+body {background-color: orange;}
+
+
+.vertical-align-center {
+    display: flex;
+    align-items: center;
+}
+
+.vertical-align-top {
+    display: flex;
+    align-items: flex-start;
+}
+
+.vertical-align-bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.category {
+	margin-top: 20px;
+    margin-bottom: 5px;
+}

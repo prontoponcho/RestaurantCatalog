@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='pane'>
+
+	<div class='header'>
+
+		<h1>{{ restaurant.name }}</h1>
+
+	</div>
+
+	<div class='flash'>
+      {% with messages = get_flashed_messages() %}
+	  	{% if messages %}
+		    <ul>
+		    {% for message in messages %}
+		        <li> <strong> {{ message }} </strong> </li>
+		    {% endfor %}
+		    </ul>
+	    {% endif %}
+		{% endwith %}
+	</div>
+
+	<div class = 'pane'>
+		<form action="{{ url_for('addMenuItem', restaurant_id=restaurant.id )}}" method = 'post'>
+
+			<dl>
+				<dt>Name:</dt>
+					<dd><input type ='text' size='30' name='name'></dd>
+				<dt>Description:</dt>
+					<dd><textarea name = 'description' rows='5' cols='40' > </textarea></dd>
+				<dt>Price:</dt>
+					<dd><input type = 'text' size = '8' name='price'></dd>
+				<dt>Course:</dt>
+					<dd><input type ='radio' name='course' value='Appetizer'>Appetizer</dd>
+					<dd><input type ='radio' name='course' value='Entree'>Entree</dd>
+					<dd><input type ='radio' name='course' value='Dessert'>Dessert</dd>
+					<dd><input type ='radio' name='course' value='Beverage'>Beverage</dd>
+			</dl>
+
+			<input type='submit' name='submit' value='create'>
+			<input type='submit' name='submit' value='cancel'>
+
+		</form>
+	</div>
+
+
+{% endblock %}

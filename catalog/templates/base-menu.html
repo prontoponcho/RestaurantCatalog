@@ -1,0 +1,45 @@
+{% include "base.html" %}
+
+<div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+
+        <div class="row vertical-align-center">
+
+            <div class="col-md-9">
+
+                <h1>{{ restaurant.name }} <small>{{restaurant.category}}</small></h1>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <a class="btn btn-default" aria-label="Add menu item" title="add item" href="{{url_for('addMenuItem', restaurant_id=restaurant.id)}}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+
+                <a class="btn btn-default" href="{{url_for('restaurants')}}" aria-label="Main page" title="back to restaurants"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+
+            </div>
+
+        </div>
+
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <ul>
+                            {% for message in messages %}
+                                <li> <strong> {{ message }} </strong> </li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endwith %}
+
+</div>
+
+{% block content %}
+{% endblock %}
