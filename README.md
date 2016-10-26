@@ -1,5 +1,5 @@
 # RestaurantCatalog
-### Flask web app with Bootstrap handling CRUD operations using SQLAlchemy ORM.
+### Flask web app with 3rd party authentication, local permission system, and object relational mapping styled with Bootstrap.
 #### Contents:
 <ul>
 <li>runserver.py executes the web app.
