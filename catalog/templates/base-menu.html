@@ -27,7 +27,7 @@
             {% if messages %}
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <div class="alert {{alert_type}} alert-dismissible" role="alert">
                             <ul>
                             {% for message in messages %}
                                 <li> <strong> {{ message }} </strong> </li>

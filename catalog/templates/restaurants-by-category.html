@@ -19,10 +19,12 @@
                         <h3>{{restaurant.name}}</h3>
                         <a href="{{url_for('viewMenu', restaurant_id=restaurant.id)}}">Menu
                         </a>
-                        |
-                        <a href="{{url_for('editRestaurant', restaurant_id=restaurant.id)}}">Edit</a>
-                        |
-                        <a href="{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}" >Delete</a>
+                        {% if restaurant.user_id == user.id %}
+	                        |
+	                        <a href="{{url_for('editRestaurant', restaurant_id=restaurant.id)}}">Edit</a>
+	                        |
+	                        <a href="{{url_for('deleteRestaurant', restaurant_id=restaurant.id)}}" >Delete</a>
+	                    {% endif %}
 					{% endfor %}
 				</div>
 
