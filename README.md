@@ -1,4 +1,4 @@
-# RestaurantCatalog
+# RestaurantCatalog -- in development
 ### Flask web app with 3rd party authentication, local permission system, and object relational mapping styled with Bootstrap.
 #### Contents:
 <ul>
