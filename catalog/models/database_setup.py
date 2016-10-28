@@ -27,6 +27,7 @@ class Restaurant(Base):
     category = Column(String(20), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
+    menuItems = relationship('MenuItem', cascade='all, delete-orphan')
 
     @property
     def serialize(self):
@@ -64,5 +65,5 @@ class MenuItem(Base):
         }
 
 # Configuration
-engine = create_engine('sqlite:///restaurantmenuwithusers.db')
+engine = create_engine('postgres://yyxwqovxkfifbc:7rQPBXfpX7RdhhzcFwtWaAOBv8@ec2-54-243-249-176.compute-1.amazonaws.com:5432/dffbvi3bmqmjca')
 Base.metadata.create_all(engine)
