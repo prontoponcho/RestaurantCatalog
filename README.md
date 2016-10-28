@@ -1,15 +1,12 @@
 # RestaurantCatalog -- in development
-### Flask web app with 3rd party authentication, local permission system, and object relational mapping styled with Bootstrap.
+### Flask web app with 3rd party authentication and local permission system handling CRUD operations through object relational mapping.
 #### Contents:
 <ul>
-<li>runserver.py executes the web app.
-<li>catalog/models/ contains code for creating and populating a SQLite database using SQLAlchemy ORM.
+<li>project.py executes the web app.
+<li>catalog/models/ contains code for creating and populating a SQL database using SQLAlchemy ORM.
 <li>catalog/views/ contains handlers and REST API endpoints.
 <li>catalog/templates/ contains html rendered with jinja2
 <li>catalog/static/ contains css and images. 
 </ul>
-#### To run the web app in developer mode, Flask and SQLAlchemy must be installed. Then from the command line run:
-```
-> python runserver.py
-```
-Then use a browser to visit http://localhost:5000/restaurants
+
+####Application hosted at https://secret-crag-37115.herokuapp.com
