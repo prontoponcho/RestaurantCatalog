@@ -9,4 +9,3 @@ from catalog import app
 if __name__ == "__main__":
     app.debug = True
     app.secret_key = 'super-secret-key'
-    app.run()
