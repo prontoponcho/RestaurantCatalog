@@ -28,4 +28,3 @@ venv
 *.pyc
 build
 
-*.json

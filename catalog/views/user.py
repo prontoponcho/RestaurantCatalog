@@ -11,7 +11,6 @@ def getUserID(email):
 
 
 def getUserInfo(user_id):
-    print "***getUserInfo user_id: {}".format(user_id)
     try:
         user = session.query(User).filter_by(id=user_id).one()
         return user
