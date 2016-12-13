@@ -9,17 +9,17 @@
 <li>catalog/static/ contains css and images. 
 </ul>
 
-####To run the local developer version, the Udacity vagrant machine for the Full Stack Web Development Course must be installed. After logging into the vagrant machine, open the project folder and run:
+####To run the local developer version, the vagrant machine for Udacity's Full Stack Web Development Course must be installed. After starting up and logging into the vagrant machine, open the github project folder and run:
 ```
 > python project.py
 ```
 Then from a browser visit the base URL http://localhost:5000/
 
-REST API endpoints can be accessed from the base URL through the following paths:
+####REST API endpoints are accessible from the base URL through the following paths:
 <ul>
 <li> /restaurants/JSON
 <li> /restaurants/[ID-OF-RESTAURANT]/menu/JSON
 <li> /restaurants/[ID-OF-RESTAURANT]/menu/[ID-OF-ITEM]/JSON
 </ul>
 
-####To see the live application, go to https://secret-crag-37115.herokuapp.com
+####Visit the live application at https://secret-crag-37115.herokuapp.com
