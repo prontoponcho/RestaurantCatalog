@@ -2,10 +2,8 @@
 {% block content %}
 
     {% if num_items == 0 %}
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>There are currently no menu items</h3>
-            </div>
+        <div class="col-md-6 col-md-offset-3">
+            <h3>There are currently no menu items</h3>
         </div>
     {% else %}
 
@@ -13,51 +11,43 @@
 
             {% if items_by_course[course].__len__() > 0 %}
 
-                <div class="row text-center">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h3>{{course}}</h3>
-                    </div>
+
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h3>{{course}}</h3>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6 col-md-offset-3">
+
+                    <div id="menuItemContainer">
 
                         {% for i in items_by_course[course] %}
 
                             <div class="media">
 
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="{{url_for('send_img', path='/64-by-64.png')}}" alt="food item">
-                                </a>
-                            </div>
-
-                            <div class="media-body">
-
-                                <h4 class="media-heading">{{i.name}} <small>{{i.price}}</small></h4>
-
-                                    <p>{{i.description}}</p>
-
-                                <div class="edit-delete-pane">
-
-                                    {% if user.id == i.user_id %}
-
-                                        <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}">Edit</a>
-                                        <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}" >Delete</a>
-
-                                    {% endif %}
-
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="{{url_for('send_img', path='/64-by-64.png')}}" alt="food item">
+                                    </a>
                                 </div>
 
-                            </div> <!--media body-->
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{i.name}} <small>{{i.price}}</small></h4>
+                                        <p>{{i.description}}</p>
+                                    <div class="edit-delete-pane">
+                                        {% if user.id == i.user_id %}
+                                            <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}">Edit</a>
+                                            <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}" >Delete</a>
+                                        {% endif %}
+                                    </div>
+                                </div> <!--media body-->
 
                             </div> <!--media-->
 
                         {% endfor %}
 
-                    </div><!--col-->
+                    </div>
 
-                </div><!--roll-->
+                </div>
 
             {% endif %}
 

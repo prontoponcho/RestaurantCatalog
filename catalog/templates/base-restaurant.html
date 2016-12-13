@@ -13,12 +13,21 @@
 
 			<div class="col-xs-4  col-md-4">
 
-				{% if user != None %}
-					<a class="btn btn-default pull-right" href="{{url_for('addRestaurant')}}" aria-label="Add new restaurant" title="add restaurant"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-				{% endif %}
+				<div class="row">
 
-				<a class="btn btn-default pull-right"  href="{{url_for('restaurantsByCategory')}}" aria-label="Sort by nationality" title="sort by nationality"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
-				<a class="btn btn-default pull-right" href="{{url_for('restaurants')}}" aria-label="Sort alphabetical" title="sort alphabetical"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a>
+					<div class="col-md-4">
+						<a class="btn btn-default pull-right" href="{{url_for('addRestaurant')}}" aria-label="Add new restaurant" title="add restaurant">Add&nbsp<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+					</div>
+
+					<div class="col-md-4">
+						<a class="btn btn-default pull-right"  href="{{url_for('restaurantsByCategory')}}" aria-label="Sort by nationality" title="sort by nationality">Sort&nbsp<span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a>
+					</div>
+
+					<div class="col-md-4">
+						<a class="btn btn-default pull-right" href="{{url_for('restaurants')}}" aria-label="Sort alphabetical" title="sort alphabetical">Sort&nbsp<span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a>
+					</div>
+
+				</div>
 			</div>
 
 		</div>

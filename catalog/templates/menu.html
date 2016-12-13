@@ -2,66 +2,60 @@
 {% block content %}
 
     {% if num_items == 0 %}
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>There are currently no menu items</h3>
-            </div>
+        <div class="col-md-6 col-md-offset-3">
+            <h3>There are currently no menu items</h3>
         </div>
     {% else %}
 
-        <!-- <div class="row text-center">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Menu</h2>
-            </div>
-        </div>
- -->
+    <div class="col-md-6 col-md-offset-3" id="menuItemContainer">
+        {% for course in course_order %}
 
-                {% for course in course_order %}
+            {% if items_by_course[course].__len__() > 0 %}
 
-                    {% if items_by_course[course].__len__() > 0 %}
+                    <div class="row text-center">
+                        <div class="col-md-6 col-md-offset-3">
+                            <h3>{{course}}</h3>
+                        </div>
+                    </div>
 
-                            <div class="row text-center">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <h3>{{course}}</h3>
-                                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+
+                        {% for i in items_by_course[course] %}
+
+                            <div class="media">
+
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="{{url_for('send_img', path='/64-by-64.png')}}" alt="food item">
+                                </a>
                             </div>
 
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
+                            <div class="media-body">
 
-                                {% for i in items_by_course[course] %}
+                                <h4 class="media-heading">{{i.name}} <small>{{i.price}}</small></h4>
 
-                                    <div class="media">
+                                    <p>{{i.description}}</p>
 
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" src="{{url_for('send_img', path='/64-by-64.png')}}" alt="food item">
-                                        </a>
-                                    </div>
+                                <div class="edit-delete-pane">
+                                    <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}">Edit</a>
+                                    <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}" >Delete</a>
+                                </div>
 
-                                    <div class="media-body">
+                            </div> <!--media body-->
 
-                                        <h4 class="media-heading">{{i.name}} <small>{{i.price}}</small></h4>
+                            </div> <!--media-->
 
-                                            <p>{{i.description}}</p>
+                        {% endfor %}
 
-                                        <div class="edit-delete-pane">
-                                            <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}">Edit</a>
-                                            <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, item_id=i.id)}}" >Delete</a>
-                                        </div>
+                    </div><!--col-->
+                </div><!--roll-->
 
-                                    </div> <!--media body-->
-
-                                    </div> <!--media-->
-
-                                {% endfor %}
-
-                            </div><!--col-->
-                        </div><!--roll-->
-
-                    {% endif %}
+            {% endif %}
 
         {% endfor %}
+
+    </div>
 
     {% endif %}
 
